@@ -1,3 +1,27 @@
+<?php
+require_once '../config/config.php';
+require_once '../app/Controllers/ClienteController.php';
+
+$controller = new ClienteController($pdo); // Substitua $pdo pela sua conexão PDO
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Verifica se todos os campos obrigatórios estão preenchidos
+    if (!empty($_POST['nome']) && !empty($_POST['cpf']) && !empty($_POST['email']) && !empty($_POST['telefone']) && !empty($_POST['cidade'])) {
+        $nome = $_POST['nome'];
+        $cpf = $_POST['cpf'];
+        $email = $_POST['email'];
+        $telefone = $_POST['telefone'];
+        $cidade = $_POST['cidade'];
+
+        // Chama o método do controller para criar o registro do cliente
+        $controller->criarRegistroCliente($nome, $cpf, $email, $telefone, $cidade); 
+        
+    } else {
+        echo "Todos os campos obrigatórios devem ser preenchidos.";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -68,7 +92,7 @@
 
     <h1>Cadastro de Clientes</h1>
     
-    <form action="processa_cadastro.php" method="post">
+    <form method="post">
         <label for="nome">Nome Completo</label>
         <input type="text" id="nome" name="nome" required>
 
@@ -86,7 +110,7 @@
 
         <div class="button-container">
             <button type="submit" class="btn-save">Salvar</button>
-            <button type="button" class="btn-list" onclick="window.location.href='lista.php'">Lista</button>
+            <button type="button" class="btn-list" onclick="window.location.href='lista-clientes.php'">Lista</button>
             <button type="button" class="btn-back" onclick="window.location.href='adm.php'">Voltar</button>
         </div>
     </form>

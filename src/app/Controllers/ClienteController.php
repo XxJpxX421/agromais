@@ -1,5 +1,5 @@
 <?php
-require_once 'C:\xampp\htdocs\sistema-empresa\app\model\ClienteModel.php';
+require_once 'C:\xampp\htdocs\agromais\src\app\Models\ClienteModel.php';
 
 class ClienteController {
     private $ClienteModel;
@@ -11,13 +11,6 @@ class ClienteController {
     // Método para criar um novo registro de cliente
     public function criarRegistroCliente($nome, $cpf, $email, $telefone, $cidade) {
         $resultado = $this->ClienteModel->criarRegistroCliente($nome, $cpf, $email, $telefone, $cidade);
-        if ($resultado) {
-            // Redireciona ou mostra uma mensagem de sucesso
-            header('Location: sucesso.php'); // Você pode modificar para a página que deseja
-        } else {
-            // Redireciona ou mostra uma mensagem de erro
-            header('Location: erro.php'); // Você pode modificar para a página que deseja
-        }
     }
 
     // Método para listar todos os clientes
