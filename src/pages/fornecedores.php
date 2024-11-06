@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Setor Administrativo</title>
+    <title>Cadastro de Fornecedores</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -82,29 +82,23 @@
 <body>
 
     <div class="container">
-        <h1>Setor Administrativo</h1>
+        <h1>Cadastro de Fornecedores</h1>
 
         <div class="card-container">
             <div class="card">
-                <h2>Cadastro de Clientes</h2>
-                <p>Inserir, atualizar e buscar informações de clientes.</p>
-                <a href="cadastro_clientes.php">Acessar</a>
+                <h2>Novo Fornecedor</h2>
+                <p>Cadastrar um novo fornecedor na plataforma.</p>
+                <a href="cadastro_fornecedor.php">Cadastrar</a>
             </div>
 
             <div class="card">
-                <h2>Cadastro de Fornecedores</h2>
-                <p>Gerenciar dados de fornecedores e histórico de pedidos.</p>
-                <a href="fornecedores.php">Acessar</a>
-            </div>
-
-            <div class="card">
-                <h2>Gestão de Funcionários</h2>
-                <p>Controle de dados dos funcionários, cargos e horários.</p>
-                <a href="funcionarios.php">Acessar</a>
+                <h2>Gerar Pedidos</h2>
+                <p>Acessar o histórico e detalhes dos pedidos feitos ou realizar novos pedidos.</p>
+                <a href="cadastro_pedidos.php">Visualizar</a>
             </div>
         </div>
 
-        <a href="index.php" class="back-button">Voltar para a Página Inicial</a>
+        <a href="adm.php" class="back-button">Voltar para Setor Administrativo</a>
     </div>
 
 </body>
